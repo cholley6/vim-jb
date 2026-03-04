@@ -447,6 +447,24 @@ highlight! link CocGitRemovedSign JBGutterDeletedLine
 if has('nvim')
   highlight! link Statusline StatusLine
   highlight! link WinBarNC JBTree
+
+  " LSP Semantic Token Highlights
+  highlight! link @lsp.type.variable Normal
+  highlight! link @lsp.type.parameter Normal
+  highlight! link @lsp.type.property JBStruct
+  highlight! link @lsp.type.function JBFunction
+  highlight! link @lsp.type.method JBFunction
+  highlight! link @lsp.type.class JBType
+  highlight! link @lsp.type.namespace JBCommentRef
+  highlight! link @lsp.type.decorator JBTag
+  highlight! link @lsp.type.builtinConstant JBConstant
+  highlight! link @lsp.type.typeParameter JBType
+  highlight! link @lsp.type.selfParameter JBKeyword
+  highlight! link @lsp.type.clsParameter JBKeyword
+  " Readonly modifier for global variables and constants
+  highlight! link @lsp.mod.readonly JBConstant
+  highlight! link @lsp.typemod.variable.readonly JBConstant
+
   highlight! link DiagnosticFloatingError ErrorText
   highlight! link DiagnosticFloatingWarn WarningText
   highlight! link DiagnosticFloatingInfo InfoText
