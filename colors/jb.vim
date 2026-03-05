@@ -465,6 +465,52 @@ if has('nvim')
   highlight! link @lsp.mod.readonly JBConstant
   highlight! link @lsp.typemod.variable.readonly JBConstant
 
+  " Treesitter Highlight Groups
+  highlight! link @string JBString
+  highlight! link @string.escape JBStringRef
+  highlight! link @string.special JBStringRef
+  highlight! link @character JBString
+  highlight! link @number JBNumber
+  highlight! link @number.float JBNumber
+  highlight! link @boolean JBNumber
+  highlight! link @function JBFunction
+  highlight! link @function.call JBFunction
+  highlight! link @function.builtin JBFunction
+  highlight! link @function.method JBFunction
+  highlight! link @function.method.call JBFunction
+  highlight! link @constructor JBType
+  highlight! link @keyword JBKeyword
+  highlight! link @keyword.conditional JBKeyword
+  highlight! link @keyword.repeat JBKeyword
+  highlight! link @keyword.return JBKeyword
+  highlight! link @keyword.exception JBKeyword
+  highlight! link @keyword.import JBKeyword
+  highlight! link @keyword.operator JBKeyword
+  highlight! link @keyword.function JBKeyword
+  highlight! link @operator Normal
+  highlight! link @punctuation Normal
+  highlight! link @punctuation.bracket Normal
+  highlight! link @punctuation.delimiter Normal
+  highlight! link @comment JBComment
+  highlight! link @comment.documentation JBDocComment
+  highlight! link @constant JBConstant
+  highlight! link @constant.builtin JBConstant
+  highlight! link @variable Normal
+  highlight! link @variable.builtin JBKeyword
+  highlight! link @variable.parameter Normal
+  highlight! link @variable.member JBStruct
+  highlight! link @property JBStruct
+  highlight! link @attribute JBTag
+  highlight! link @attribute.builtin JBTag
+  highlight! link @type JBType
+  highlight! link @type.builtin JBType
+  highlight! link @type.definition JBType
+  highlight! link @module JBCommentRef
+  highlight! link @label JBVirtualText
+  highlight! link @tag JBTag
+  highlight! link @tag.attribute Normal
+  highlight! link @tag.delimiter JBTag
+
   highlight! link DiagnosticFloatingError ErrorText
   highlight! link DiagnosticFloatingWarn WarningText
   highlight! link DiagnosticFloatingInfo InfoText
