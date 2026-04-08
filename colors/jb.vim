@@ -448,6 +448,60 @@ if has('nvim')
   highlight! link Statusline StatusLine
   highlight! link WinBarNC JBTree
 
+  " Treesitter Highlight Groups
+  " Variables
+  highlight! link @variable Normal
+  highlight! link @variable.builtin JBKeyword
+  highlight! link @variable.parameter Normal
+  highlight! link @variable.member JBStruct
+  highlight! link @property JBStruct
+  " Constants
+  highlight! link @constant JBConstant
+  highlight! link @constant.builtin JBKeyword
+  " Strings
+  highlight! link @string JBString
+  highlight! link @string.regexp JBStringRef
+  highlight! link @string.special JBStringRef
+  highlight! link @string.special.url JBHyperlink
+  " Numbers and booleans
+  highlight! link @number JBNumber
+  highlight! link @number.float JBNumber
+  highlight! link @boolean JBKeyword
+  " Functions
+  highlight! link @function JBFunction
+  highlight! link @function.builtin JBFunction
+  highlight! link @function.call JBFunction
+  highlight! link @function.method JBFunction
+  highlight! link @function.method.call JBFunction
+  " Types
+  highlight! link @type JBType
+  highlight! link @type.builtin JBType
+  highlight! link @type.parameter JBType
+  highlight! link @constructor JBType
+  " Keywords
+  highlight! link @keyword JBKeyword
+  highlight! link @keyword.function JBKeyword
+  highlight! link @keyword.operator JBKeyword
+  highlight! link @keyword.import JBKeyword
+  highlight! link @keyword.return JBKeyword
+  highlight! link @keyword.exception JBKeyword
+  highlight! link @keyword.coroutine JBKeyword
+  " Operators and punctuation
+  highlight! link @operator Normal
+  highlight! link @punctuation.delimiter Normal
+  highlight! link @punctuation.bracket Normal
+  highlight! link @punctuation.special JBKeyword
+  " Comments
+  highlight! link @comment JBComment
+  highlight! link @comment.documentation JBDocComment
+  " JSX/TSX tags
+  highlight! link @tag JBTag
+  highlight! link @tag.attribute Normal
+  highlight! link @tag.delimiter Normal
+  " Modules and namespaces
+  highlight! link @module Normal
+  highlight! link @namespace JBCommentRef
+
   " LSP Semantic Token Highlights
   highlight! link @lsp.type.variable Normal
   highlight! link @lsp.type.parameter Normal
