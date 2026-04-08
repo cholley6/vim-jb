@@ -460,9 +460,13 @@ if has('nvim')
   highlight! link @constant.builtin JBKeyword
   " Strings
   highlight! link @string JBString
+  highlight! link @string.escape JBStringRef
   highlight! link @string.regexp JBStringRef
   highlight! link @string.special JBStringRef
   highlight! link @string.special.url JBHyperlink
+  " Characters
+  highlight! link @character JBString
+  highlight! link @character.special JBStringRef
   " Numbers and booleans
   highlight! link @number JBNumber
   highlight! link @number.float JBNumber
@@ -476,31 +480,45 @@ if has('nvim')
   " Types
   highlight! link @type JBType
   highlight! link @type.builtin JBType
+  highlight! link @type.definition JBType
   highlight! link @type.parameter JBType
   highlight! link @constructor JBType
   " Keywords
   highlight! link @keyword JBKeyword
-  highlight! link @keyword.function JBKeyword
-  highlight! link @keyword.operator JBKeyword
-  highlight! link @keyword.import JBKeyword
-  highlight! link @keyword.return JBKeyword
-  highlight! link @keyword.exception JBKeyword
+  highlight! link @keyword.conditional JBKeyword
+  highlight! link @keyword.conditional.ternary JBKeyword
   highlight! link @keyword.coroutine JBKeyword
+  highlight! link @keyword.directive JBKeyword
+  highlight! link @keyword.exception JBKeyword
+  highlight! link @keyword.function JBKeyword
+  highlight! link @keyword.import JBKeyword
+  highlight! link @keyword.modifier JBKeyword
+  highlight! link @keyword.operator JBKeyword
+  highlight! link @keyword.repeat JBKeyword
+  highlight! link @keyword.return JBKeyword
+  highlight! link @keyword.type JBKeyword
   " Operators and punctuation
   highlight! link @operator Normal
+  highlight! link @punctuation Normal
   highlight! link @punctuation.delimiter Normal
   highlight! link @punctuation.bracket Normal
   highlight! link @punctuation.special JBKeyword
   " Comments
   highlight! link @comment JBComment
   highlight! link @comment.documentation JBDocComment
+  " Attributes/decorators
+  highlight! link @attribute JBTag
+  highlight! link @attribute.builtin JBTag
   " JSX/TSX tags
   highlight! link @tag JBTag
   highlight! link @tag.attribute Normal
-  highlight! link @tag.delimiter Normal
+  highlight! link @tag.delimiter JBTag
   " Modules and namespaces
-  highlight! link @module Normal
+  highlight! link @module JBCommentRef
+  highlight! link @module.builtin JBType
   highlight! link @namespace JBCommentRef
+  " Labels
+  highlight! link @label JBVirtualText
 
   " LSP Semantic Token Highlights
   highlight! link @lsp.type.variable Normal
@@ -518,52 +536,19 @@ if has('nvim')
   " Readonly modifier for global variables and constants
   highlight! link @lsp.mod.readonly JBConstant
   highlight! link @lsp.typemod.variable.readonly JBConstant
+  highlight! link @lsp.typemod.variable.defaultLibrary JBKeyword
+  highlight! link @lsp.typemod.function.defaultLibrary JBFunction
 
-  " Treesitter Highlight Groups
-  highlight! link @string JBString
-  highlight! link @string.escape JBStringRef
-  highlight! link @string.special JBStringRef
-  highlight! link @character JBString
-  highlight! link @number JBNumber
-  highlight! link @number.float JBNumber
-  highlight! link @boolean JBNumber
-  highlight! link @function JBFunction
-  highlight! link @function.call JBFunction
-  highlight! link @function.builtin JBFunction
-  highlight! link @function.method JBFunction
-  highlight! link @function.method.call JBFunction
-  highlight! link @constructor JBType
-  highlight! link @keyword JBKeyword
-  highlight! link @keyword.conditional JBKeyword
-  highlight! link @keyword.repeat JBKeyword
-  highlight! link @keyword.return JBKeyword
-  highlight! link @keyword.exception JBKeyword
-  highlight! link @keyword.import JBKeyword
-  highlight! link @keyword.operator JBKeyword
-  highlight! link @keyword.function JBKeyword
-  highlight! link @operator Normal
-  highlight! link @punctuation Normal
-  highlight! link @punctuation.bracket Normal
-  highlight! link @punctuation.delimiter Normal
-  highlight! link @comment JBComment
-  highlight! link @comment.documentation JBDocComment
-  highlight! link @constant JBConstant
-  highlight! link @constant.builtin JBConstant
-  highlight! link @variable Normal
-  highlight! link @variable.builtin JBKeyword
-  highlight! link @variable.parameter Normal
-  highlight! link @variable.member JBStruct
-  highlight! link @property JBStruct
-  highlight! link @attribute JBTag
-  highlight! link @attribute.builtin JBTag
-  highlight! link @type JBType
-  highlight! link @type.builtin JBType
-  highlight! link @type.definition JBType
-  highlight! link @module JBCommentRef
-  highlight! link @label JBVirtualText
-  highlight! link @tag JBTag
-  highlight! link @tag.attribute Normal
-  highlight! link @tag.delimiter JBTag
+  " TypeScript/JavaScript LSP Semantic Token Highlights
+  highlight! link @lsp.type.enum JBType
+  highlight! link @lsp.type.enumMember JBConstant
+  highlight! link @lsp.type.interface JBType
+  highlight! link @lsp.type.type JBType
+  highlight! link @lsp.type.keyword JBKeyword
+  highlight! link @lsp.type.string JBString
+  highlight! link @lsp.type.number JBNumber
+  highlight! link @lsp.type.regexp JBStringRef
+  highlight! link @lsp.type.operator Normal
 
   highlight! link DiagnosticFloatingError ErrorText
   highlight! link DiagnosticFloatingWarn WarningText
